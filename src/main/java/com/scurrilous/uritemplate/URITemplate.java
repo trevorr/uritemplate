@@ -27,6 +27,7 @@ import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.BufferedTokenStream;
 import org.antlr.runtime.RecognitionException;
 
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 
@@ -53,6 +54,7 @@ public final class URITemplate implements Serializable
      */
     public URITemplate(String template)
     {
+        Preconditions.checkNotNull(template);
         this.template = template;
         readResolve();
     }
@@ -417,6 +419,22 @@ public final class URITemplate implements Serializable
     private static boolean isHex(int c)
     {
         return c >= HEX_FIRST && c <= HEX_LAST && checkMask(HEX_MASK, c - HEX_FIRST);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return template.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        return template.equals(((URITemplate) obj).template);
     }
 
     @Override
