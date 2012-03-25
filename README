@@ -1,0 +1,5 @@
+Complete Java implementation of URI Templates as defined by
+IETF URI Template Internet Draft, Version 8
+http://tools.ietf.org/html/draft-gregorio-uritemplate-08
+
+See LICENSE file for licensing information
