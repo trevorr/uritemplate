@@ -21,8 +21,8 @@
   </licenses>
 
   <scm>
-    <url>https://github.com/trevorr/scurrilous-uritemplate</url>
-    <connection>https://github.com/trevorr/scurrilous-uritemplate.git</connection>
+    <url>https://github.com/trevorr/uritemplate</url>
+    <connection>https://github.com/trevorr/uritemplate.git</connection>
   </scm>
 
   <properties>
