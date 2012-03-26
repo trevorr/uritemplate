@@ -207,7 +207,7 @@ public final class URITemplate implements Serializable
                     if (named)
                     {
                         appendLiteral(buf, name);
-                        if (query || !str.isEmpty())
+                        if (query || str.length() > 0)
                             buf.append('=');
                     }
                     if (maxLength <= 0)
@@ -258,7 +258,7 @@ public final class URITemplate implements Serializable
             if (varName != null)
             {
                 appendLiteral(buf, varName);
-                if (forceValueSeparator || !itemStr.isEmpty())
+                if (forceValueSeparator || itemStr.length() > 0)
                     buf.append('=');
             }
             appendEncoded(buf, itemStr, allowReserved);
@@ -280,7 +280,7 @@ public final class URITemplate implements Serializable
                 firstItem = false;
             appendEncoded(buf, entry.getKey().toString(), allowReserved);
             final String entryStr = entryValue.toString();
-            if (forceValueSeparator || !entryStr.isEmpty())
+            if (forceValueSeparator || entryStr.length() > 0)
                 buf.append(valueSeparator);
             appendEncoded(buf, entryStr, allowReserved);
         }
