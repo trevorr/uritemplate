@@ -29,6 +29,7 @@
   <scm>
     <url>https://github.com/trevorr/uritemplate</url>
     <connection>scm:git:git@github.com:trevorr/uritemplate.git</connection>
+    <developerConnection>scm:git:git@github.com:trevorr/uritemplate.git</developerConnection>
   </scm>
 
   <properties>
